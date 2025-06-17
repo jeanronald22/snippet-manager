@@ -1,0 +1,33 @@
+# Fichiers et dossiers générés par Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media/
+
+# Environnements virtuels Python
+.env
+venv/
+env/
+
+# Fichiers spécifiques à PyCharm
+.idea/
+
+# Système d’exploitation
+.DS_Store
+Thumbs.db
+
+# Fichiers de couverture de tests
+.coverage
+htmlcov/
+
+# Outils de test et packaging
+.tox/
+.eggs/
+*.egg-info/
+
+# Fichiers de configuration locale
+*.bak
+*.swp

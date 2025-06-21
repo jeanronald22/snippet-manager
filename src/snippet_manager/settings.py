@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'users',
-    'django_extensions'
+    'django_extensions',
+    'snippets'
 ]
 
 REST_FRAMEWORK = {

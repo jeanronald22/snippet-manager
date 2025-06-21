@@ -78,6 +78,7 @@ python manage.py runserver
 | `/api/snippets/`           | GET,POST             | Lister / créer des snippets                  | Oui                      |
 | `/api/snippets/{id}/`      | GET,PUT,PATCH,DELETE | Détails / modifier / supprimer un snippet    | Oui                      |
 
+* documentation complete `/redoc/` ou `/swagger/` une fois le projet lancer
 ---
 
 ## Authentification

@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-ois8-%*!x4q(w2j!=rv6l&q&um+fp5h)g9apl72c8*^!of4+de
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True  # pas recommandé en production
+CORS_ALLOW_CREDENTIALS = True
 
 
 # Application definition
@@ -43,7 +45,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'snippets',
     'drf_yasg',
-    'django_filters'
+    'django_filters',
+    'corsheaders'
 ]
 
 REST_FRAMEWORK = {
@@ -71,6 +74,7 @@ SIMPLE_JWT = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

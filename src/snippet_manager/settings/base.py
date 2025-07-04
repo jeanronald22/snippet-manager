@@ -29,11 +29,15 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-CORS_ALLOW_ALL_ORIGINS = True  # pas recommandé en production
-CORS_ALLOW_CREDENTIALS = True
-
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+else:
+    CORS_ALLOWED_ORIGINS = ["https://vercel.app", ]
+if DEBUG:
+    CORS_ALLOW_CREDENTIALS = True
+CSRF_COOKIE_SECURE = not DEBUG
+SESSION_COOKIE_SECURE = not DEBUG
 
 # Application definition
 

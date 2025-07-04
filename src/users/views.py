@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework import status, viewsets
@@ -41,6 +42,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 class LoginView(APIView):
     permission_classes = [AllowAny]
+    DEBUG = settings.DEBUG
 
     def post(self, request):
         username = request.data.get('username')
@@ -58,8 +60,8 @@ class LoginView(APIView):
         response.set_cookie(key="refresh_token",
                             value=refresh_token,
                             httponly=True,
-                            secure=True,
-                            samesite='None',
+                            secure=not self.DEBUG,
+                            samesite='None' if not self.DEBUG else "Lax",
                             max_age=7 * 24 * 60 * 60,  # 7jours
                             path="/"
                             )
@@ -71,8 +73,6 @@ class RefreshTokenView(APIView):
 
     def post(self, request):
         refresh_token = request.COOKIES.get('refresh_token')
-        print(refresh_token)
-        print(request.COOKIES)
 
         if refresh_token is None:
             return Response({'detail': 'No refresh token'}, status=status.HTTP_401_UNAUTHORIZED)

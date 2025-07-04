@@ -10,7 +10,7 @@ services:
     name: snippet_manager
     runtime: python
     buildCommand: './build.sh'
-    startCommand: 'cd src && python -m gunicorn snippet_manager.asgi:application -k uvicorn.workers.UvicornWorker'
+    startCommand: 'cd src && python -m gunicorn snippet_manager.asgi:application -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT'
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -20,3 +20,11 @@ services:
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4
+      - key: STATIC_ROOT
+        value: "/opt/render/project/src/staticfiles"
+      - key: DISABLE_COLLECTSTATIC
+        value: "0"
+      - key: PYTHONPATH
+        value: "/opt/render/project/src:/opt/render/project"
+      - key: DJANGO_SETTINGS_MODULE
+        value: "snippet_manager.settings"

@@ -55,7 +55,11 @@ class LoginView(APIView):
         refresh_token = str(refresh)
 
         response = Response({'access': access_token}, status=status.HTTP_200_OK)
-        response.set_cookie(key="refresh_token", value=refresh_token, httponly=True, secure=True, samesite='strict',
+        response.set_cookie(key="refresh_token",
+                            value=refresh_token,
+                            httponly=True,
+                            secure=True,
+                            samesite='None',
                             max_age=7 * 24 * 60 * 60,  # 7jours
                             path="/"
                             )
@@ -67,6 +71,8 @@ class RefreshTokenView(APIView):
 
     def post(self, request):
         refresh_token = request.COOKIES.get('refresh_token')
+        print(refresh_token)
+        print(request.COOKIES)
 
         if refresh_token is None:
             return Response({'detail': 'No refresh token'}, status=status.HTTP_401_UNAUTHORIZED)

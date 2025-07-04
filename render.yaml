@@ -1,20 +1,20 @@
 databases:
-  - name: snippetdb
+  - name: snippet_manager_db
     plan: free
-    databaseName: snippetdb
+    databaseName: snippet_manager_db
     user: snippetuser
 
 services:
   - type: web
     plan: free
-    name: snippet-manager
+    name: snippet_manager
     runtime: python
     buildCommand: './build.sh'
-    startCommand: 'cd src && python -m gunicorn snippet-manager.asgi:application -k uvicorn.workers.UvicornWorker'
+    startCommand: 'cd src && python -m gunicorn snippet_manager.asgi:application -k uvicorn.workers.UvicornWorker'
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: snippetdb
+          name: snippet_manager_db
           property: connectionString
       - key: SECRET_KEY
         generateValue: true

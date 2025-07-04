@@ -31,3 +31,5 @@ htmlcov/
 # Fichiers de configuration locale
 *.bak
 *.swp
+
+staticfiles/

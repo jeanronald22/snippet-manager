@@ -33,12 +33,14 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:
-    CORS_ALLOWED_ORIGINS = ["https://vercel.app", ]
+    CORS_ALLOWED_ORIGINS = ["https://vercel.app", "http://localhost:3000"]
 if DEBUG:
     CORS_ALLOW_CREDENTIALS = True
 CSRF_COOKIE_SECURE = not DEBUG
 SESSION_COOKIE_SECURE = not DEBUG
-
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+]
 # Application definition
 
 INSTALLED_APPS = [

@@ -25,13 +25,6 @@ services:
       - key: DISABLE_COLLECTSTATIC
         value: "0"
       - key: PYTHONPATH
-<<<<<<< HEAD
-        value: "/opt/render/project/src:/opt/render/project"
-      - key: DJANGO_SETTINGS_MODULE
-        value: "snippet_manager.settings"
-=======
         value: "/opt/render/project/src"
       - key: DJANGO_SETTINGS_MODULE
         value: "snippet_manager.settings"
-        
->>>>>>> 8e8ca80 (fix pour deployer)

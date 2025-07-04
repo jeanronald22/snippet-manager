@@ -31,6 +31,8 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+print(ALLOWED_HOSTS)
+# ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True  # pas recommandé en production
 CORS_ALLOW_CREDENTIALS = True
 

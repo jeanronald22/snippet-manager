@@ -42,8 +42,7 @@ class UserViewSet(viewsets.ModelViewSet):
 class LoginView(APIView):
     permission_classes = [AllowAny]
 
-    @staticmethod
-    def post(request):
+    def post(self, request):
         username = request.data.get('username')
         password = request.data.get('password')
 
@@ -66,7 +65,6 @@ class LoginView(APIView):
 class RefreshTokenView(APIView):
     permission_classes = [AllowAny]
 
-    @staticmethod
     def post(self, request):
         refresh_token = request.COOKIES.get('refresh_token')
 
@@ -83,10 +81,8 @@ class RefreshTokenView(APIView):
 class LogoutView(APIView):
     permission_classes = [AllowAny]
 
-    @staticmethod
     def post(self, request):
         response = Response({'detail': 'Logout'}, status=status.HTTP_200_OK)
-        response.delete_cookie('refresh_token',
-                               path='/'
+        response.delete_cookie('refresh_token', path='/'
                                )
         return response

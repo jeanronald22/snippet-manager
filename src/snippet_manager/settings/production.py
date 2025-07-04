@@ -1,7 +1,7 @@
 
 import dj_database_url
 
-from snippet_manager.settings import MIDDLEWARE
+from .base import MIDDLEWARE
 
 
 DATABASES = {

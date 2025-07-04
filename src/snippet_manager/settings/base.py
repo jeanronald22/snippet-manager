@@ -14,7 +14,7 @@ import os
 import dj_database_url
 from datetime import timedelta
 from pathlib import Path
-from decouple import config, Csv
+from decouple import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -31,6 +31,8 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+print(ALLOWED_HOSTS)
+# ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True  # pas recommandé en production
 CORS_ALLOW_CREDENTIALS = True
 

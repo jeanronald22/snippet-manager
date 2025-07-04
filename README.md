@@ -1,6 +1,6 @@
 # Journal du Développeur — API
 
-> API RESTful pour la gestion des snippets de code personnalisés.
+> API RESTful pour la gestion des snippets de code personnalisés
 > Permet à chaque utilisateur d'organiser, créer, modifier, supprimer et consulter ses propres snippets, catégories, tags, et langages.
 
 ---

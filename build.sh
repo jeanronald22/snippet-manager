@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -o errexit
-apt-get update && apt-get install -y graphviz graphviz-dev pkg-config
 
 pip install --upgrade pip
 pip install -r requirements.txt

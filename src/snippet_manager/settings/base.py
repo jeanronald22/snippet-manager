@@ -30,7 +30,7 @@ DEBUG = decouple.config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = decouple.config(
     'ALLOWED_HOSTS',
-    default='172.20.10.11,localhost,0.0.0.0,http://localhost:3000',
+    default='172.20.10.11,localhost,0.0.0.0,http://localhost:3000,snihub.onrender.com',
     cast=decouple.Csv()
 )
 if DEBUG:

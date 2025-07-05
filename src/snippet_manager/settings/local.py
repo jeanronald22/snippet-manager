@@ -22,3 +22,4 @@ else:
 
 STATICFILES_DIRS = [BASE_DIR / 'static'] if (BASE_DIR / 'static').exists() else []
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+ROOT_URLCONF = 'snippet_manager.urls'

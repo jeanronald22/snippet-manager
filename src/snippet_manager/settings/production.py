@@ -15,3 +15,4 @@ DATABASES = {
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = dj_database_url.config('STATIC_ROOT', default='/opt/render/project/src/staticfiles')
+ROOT_URLCONF = 'snippet_manager.urls'

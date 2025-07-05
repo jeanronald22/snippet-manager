@@ -67,3 +67,5 @@ class UserViewSetTests(APITestCase):
     #     url = f"{self.register_url}{self.user2.id}/"
     #     response = self.client.delete(url)
     #     self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+#  This is a test for automatic deployment

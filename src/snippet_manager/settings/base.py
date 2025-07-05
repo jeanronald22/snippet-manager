@@ -28,10 +28,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY') or decouple.config('SECRET_KEY', defau
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = decouple.config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = decouple.config('ALLOWED_HOSTS',
-                                default=['172.20.10.11', 'localhost', '0.0.0.0', 'http://localhost:3000'],
-                                cast=decouple.Csv()
-                                )
+ALLOWED_HOSTS = decouple.config(
+    'ALLOWED_HOSTS',
+    default='172.20.10.11,localhost,0.0.0.0,http://localhost:3000',
+    cast=decouple.Csv()
+)
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:

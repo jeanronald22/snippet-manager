@@ -1,7 +1,7 @@
 
 import dj_database_url
 
-from .base import MIDDLEWARE
+from .base import *
 
 
 DATABASES = {

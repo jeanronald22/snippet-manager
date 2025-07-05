@@ -20,9 +20,11 @@ pillow==11.2.1
 pluggy==1.6.0
 psycopg2-binary==2.9.10
 Pygments==2.19.1
+pygraphviz==1.14
 PyJWT==2.9.0
 pytest==8.4.1
 pytest-django==4.11.1
+python-decouple==3.8
 pytz==2025.2
 PyYAML==6.0.2
 sqlparse==0.5.3

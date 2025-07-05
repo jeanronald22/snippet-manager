@@ -1,4 +1,5 @@
 from .base import *
+from decouple import config
 
 
 if config('DATABASE_URL', default=None):

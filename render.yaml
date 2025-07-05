@@ -27,5 +27,5 @@ services:
       - key: PYTHONPATH
         value: "/opt/render/project/src"
       - key: DJANGO_SETTINGS_MODULE
-        value: "snippet_manager.settings"
+        value: "snippet_manager.settings.production"
         
